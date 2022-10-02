@@ -7,6 +7,8 @@ const server = express().listen(PORT, () => console.log(`Listening on ${PORT}`))
 const SocketServer = require('ws').Server;
 const wss = new SocketServer({ server });
 
+console.log('Constructed socket server.');
+
 function constructWS(wsRaw) {
 	let ws = { customEvents: {}, socketid: '' };
 
