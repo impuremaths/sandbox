@@ -2,7 +2,7 @@
 
 const PORT = process.env.PORT || 3000;
 const express = require('express');
-const server = express().listen(PORT, () => console.log(`Listening on ${PORT}`));
+const server = express();
 
 const SocketServer = require('ws').Server;
 const wss = new SocketServer({ server });
@@ -50,6 +50,6 @@ server.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-server.listen(8080, () => {
-  console.log(`http listening on 8080.`)
+server.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
 });
